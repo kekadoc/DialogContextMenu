@@ -51,6 +51,7 @@ public class DialogContextMenu extends DialogFragment {
     public interface OnSelectItemListener {
         void onSelectItem(int position);
     }
+
     public interface DialogContextItem {
 
         String getText();
