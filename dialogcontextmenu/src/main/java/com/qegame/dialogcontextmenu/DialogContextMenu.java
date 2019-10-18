@@ -48,18 +48,6 @@ public class DialogContextMenu extends DialogFragment {
     /** Bottom of Context */
     private final int TYPE_BOTTOM = 3;
 
-    public interface OnSelectItemListener {
-        void onSelectItem(int position);
-    }
-
-    public interface DialogContextItem {
-
-        String getText();
-
-        void onSelect();
-
-    }
-
     /** Listener */
     private OnSelectItemListener onSelectItemListener;
     /** Position dialog */

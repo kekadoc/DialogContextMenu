@@ -10,7 +10,9 @@ import android.widget.FrameLayout;
 
 
 import com.google.android.material.snackbar.Snackbar;
+import com.qegame.dialogcontextmenu.DialogContextItem;
 import com.qegame.dialogcontextmenu.DialogContextMenu;
+import com.qegame.dialogcontextmenu.OnSelectItemListener;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                DialogContextMenu dialog = DialogContextMenu.instance(new DialogContextMenu.DialogContextItem() {
+                DialogContextMenu dialog = DialogContextMenu.instance(new DialogContextItem() {
                     @Override
                     public String getText() {
                         return "Item";
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        DialogContextMenu dialog = DialogContextMenu.instance(new DialogContextMenu.DialogContextItem() {
+        DialogContextMenu dialog = DialogContextMenu.instance(new DialogContextItem() {
             @Override
             public String getText() {
                 return "Item";
@@ -68,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         coordinatorLayout.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(final View v, MotionEvent event) {
-                DialogContextMenu.DialogContextItem item_0 = new DialogContextMenu.DialogContextItem() {
+                DialogContextItem item_0 = new DialogContextItem() {
                     @Override
                     public String getText() {
                         return "Item_0";
@@ -79,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 };
-                DialogContextMenu.DialogContextItem item_1 = new DialogContextMenu.DialogContextItem() {
+                DialogContextItem item_1 = new DialogContextItem() {
                     @Override
                     public String getText() {
                         return "Item_1";
@@ -90,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 };
-                DialogContextMenu.DialogContextItem item_2 = new DialogContextMenu.DialogContextItem() {
+                DialogContextItem item_2 = new DialogContextItem() {
                     @Override
                     public String getText() {
                         return "Item_2";
@@ -108,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 dialog.setColorRipple(getResources().getColor(R.color.colorAccent));
                 dialog.setPadding(20);
                 dialog.setCornerRadius(80);
-                dialog.setOnSelectItemListener(new DialogContextMenu.OnSelectItemListener() {
+                dialog.setOnSelectItemListener(new OnSelectItemListener() {
                     @Override
                     public void onSelectItem(int position) {
                         Snackbar.make(v, "select " + position, Snackbar.LENGTH_SHORT).show();
