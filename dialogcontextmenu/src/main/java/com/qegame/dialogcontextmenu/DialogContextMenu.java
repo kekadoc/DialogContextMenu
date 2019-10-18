@@ -88,6 +88,15 @@ public class DialogContextMenu extends DialogFragment {
         dialog.items.addAll(Arrays.asList(items));
         return dialog;
     }
+    public static DialogContextMenu instance(View view, @Size(min = 1) @NonNull DialogContextItem...items) {
+        if (items.length == 0) {
+            throw new RuntimeException("The number of elements must not be equal to zero!");
+        }
+        DialogContextMenu dialog = new DialogContextMenu();
+        dialog.setPosition(view);
+        dialog.items.addAll(Arrays.asList(items));
+        return dialog;
+    }
 
     public DialogContextMenu() {
         this.point = new Point();
