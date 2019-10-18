@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DialogAnimation_x_start">
+        <item name="android:windowEnterAnimation">@anim/scale_x_pivot_start</item>
+        <item name="android:windowExitAnimation">@anim/fade_scale_x_pivot_start</item>
+    </style>
+    <style name="DialogAnimation_x_end">
+        <item name="android:windowEnterAnimation">@anim/scale_x_pivot_end</item>
+        <item name="android:windowExitAnimation">@anim/fade_scale_x_pivot_end</item>
+    </style>
+    <style name="DialogAnimation_y_start">
+        <item name="android:windowEnterAnimation">@anim/scale_y_pivot_start</item>
+        <item name="android:windowExitAnimation">@anim/fade_scale_y_pivot_start</item>
+    </style>
+    <style name="DialogAnimation_y_end">
+        <item name="android:windowEnterAnimation">@anim/scale_y_pivot_end</item>
+        <item name="android:windowExitAnimation">@anim/fade_scale_y_pivot_end</item>
+    </style>
+
+</resources>
