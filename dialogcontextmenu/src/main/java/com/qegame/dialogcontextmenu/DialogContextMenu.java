@@ -441,12 +441,12 @@ public class DialogContextMenu extends DialogFragment {
     }
     /** Build Background TextView */
     private Drawable getItemBackground(boolean[] corners, float round) {
-        ShapeAppearanceModel model = new ShapeAppearanceModel();
-        if (corners[0]) model.setTopLeftCorner(new RoundedCornerTreatment(round));
-        if (corners[1]) model.setTopRightCorner(new RoundedCornerTreatment(round));
-        if (corners[2]) model.setBottomRightCorner(new RoundedCornerTreatment(round));
-        if (corners[3]) model.setBottomLeftCorner(new RoundedCornerTreatment(round));
-        MaterialShapeDrawable drawable = new MaterialShapeDrawable(model);
+        ShapeAppearanceModel.Builder modelBuilder = new ShapeAppearanceModel.Builder();
+        if (corners[0]) modelBuilder.setTopLeftCorner(new RoundedCornerTreatment(round));
+        if (corners[1]) modelBuilder.setTopRightCorner(new RoundedCornerTreatment(round));
+        if (corners[2]) modelBuilder.setBottomRightCorner(new RoundedCornerTreatment(round));
+        if (corners[3]) modelBuilder.setBottomLeftCorner(new RoundedCornerTreatment(round));
+        MaterialShapeDrawable drawable = new MaterialShapeDrawable(modelBuilder.build());
         drawable.setTint(this.colorBackground);
 
         return setupRipple(drawable);
@@ -456,11 +456,11 @@ public class DialogContextMenu extends DialogFragment {
         return getItemBackground(new boolean[] {false, true, true, true}, round);
     }
     private Drawable getTopDrawable(float widthArrow, float heightArrow, float round) {
-        ShapeAppearanceModel shape = new ShapeAppearanceModel();
-        shape.setBottomEdge(new TopIndex(widthArrow, heightArrow, round));
-        shape.setTopLeftCorner(new RoundedCornerTreatment(round));
-        shape.setTopRightCorner(new RoundedCornerTreatment(round));
-        MaterialShapeDrawable drawable = new MaterialShapeDrawable(shape);
+        ShapeAppearanceModel.Builder shapeBuilder = new ShapeAppearanceModel.Builder();
+        shapeBuilder.setBottomEdge(new TopIndex(widthArrow, heightArrow, round));
+        shapeBuilder.setTopLeftCorner(new RoundedCornerTreatment(round));
+        shapeBuilder.setTopRightCorner(new RoundedCornerTreatment(round));
+        MaterialShapeDrawable drawable = new MaterialShapeDrawable(shapeBuilder.build());
         drawable.setTint(colorBackground);
         return drawable;
     }
@@ -469,11 +469,11 @@ public class DialogContextMenu extends DialogFragment {
         return getItemBackground(new boolean[] {true, false, true, true}, round);
     }
     private Drawable getBottomDrawable(float widthArrow, float heightArrow, float round) {
-        ShapeAppearanceModel shape = new ShapeAppearanceModel();
-        shape.setTopEdge(new TopIndex(widthArrow, heightArrow, round));
-        shape.setBottomLeftCorner(new RoundedCornerTreatment(round));
-        shape.setBottomRightCorner(new RoundedCornerTreatment(round));
-        MaterialShapeDrawable drawable = new MaterialShapeDrawable(shape);
+        ShapeAppearanceModel.Builder shapeBuilder = new ShapeAppearanceModel.Builder();
+        shapeBuilder.setTopEdge(new TopIndex(widthArrow, heightArrow, round));
+        shapeBuilder.setBottomLeftCorner(new RoundedCornerTreatment(round));
+        shapeBuilder.setBottomRightCorner(new RoundedCornerTreatment(round));
+        MaterialShapeDrawable drawable = new MaterialShapeDrawable(shapeBuilder.build());
         drawable.setTint(colorBackground);
         return drawable;
     }
