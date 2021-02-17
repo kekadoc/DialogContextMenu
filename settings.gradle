@@ -1,1 +1,2 @@
-include ':app', ':dialogcontextmenu'
+include ':app', ':popupdialogtool'
+rootProject.name = "PopupDialog"
